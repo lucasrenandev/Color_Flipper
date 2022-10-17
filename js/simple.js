@@ -6,12 +6,14 @@ const copy = document.getElementById("fa-copy")
 let colorText = color.textContent
 let newColor
 
+// ATRIBUINDO A FUNÇÃO CORES ALEATÓRIAS
 button.addEventListener("click", function() {
     newColor = colorsRandom()
     color.textContent = colors[newColor]
     changeColorBody.style.backgroundColor = colors[newColor]
 })
 
+// FUNÇÃO PARA COPIAR AS CORES GERADAS
 copy.addEventListener("click", function() {
     if(color.textContent === "#f1f5f8") {
         navigator.clipboard.writeText(colorText)
@@ -23,6 +25,7 @@ copy.addEventListener("click", function() {
     }
 })
 
+// FUNÇÃO PARA GERAR CORES ALEATÓRIAS
 function colorsRandom() {
     return Math.floor(Math.random() * colors.length)
 }

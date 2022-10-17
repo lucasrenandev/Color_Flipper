@@ -5,12 +5,14 @@ const copy = document.getElementById("fa-copy")
 let colorValue = color.textContent
 let newColorHexa
 
+// ATRIBUINDO SISTEMA HEXADECIMAL
 button.addEventListener("click", function() {
     newColorHexa = hexaColorCode()
     color.textContent = newColorHexa
     changeColor.style.backgroundColor = newColorHexa
 })
 
+// FUNÇÃO PARA COPIAR O CÓDIGO HEXADECIMAL DAS CORES
 copy.addEventListener("click", function() {
     if(color.textContent === "#f1f5f8") {
         navigator.clipboard.writeText(colorValue)
@@ -18,10 +20,11 @@ copy.addEventListener("click", function() {
     }
     else {
         navigator.clipboard.writeText(newColorHexa)
-        window.alert("código copiado com sucesso!")
+        window.alert("Código copiado com sucesso!")
     }
 })
 
+// FUNÇÃO PARA GERAR SISTEMA HEXADECIMAL
 function hexaColorCode() {
     let hexaCode = "123456789abcdef"
     let maxLength = 6
